@@ -1,25 +1,23 @@
 package com.algaworks.algafood.jpa;
 
 import com.algaworks.algafood.AlgafoodApiApplication;
-import com.algaworks.algafood.domain.model.Cozinha;
-import com.algaworks.algafood.domain.repository.CozinhaRepository;
+import com.algaworks.algafood.domain.model.Restaurante;
+import com.algaworks.algafood.domain.repository.RestauranteRepository;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 
-public class ExclusaoCozinhaMain {
+public class BuscaRestauranteMain {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new SpringApplicationBuilder(AlgafoodApiApplication.class)
                 .web(WebApplicationType.NONE)
                 .run(args);
 
-        CozinhaRepository cozinhas = applicationContext.getBean(CozinhaRepository.class);
+        RestauranteRepository restauranteRepository = applicationContext.getBean(RestauranteRepository.class);
 
-        Cozinha cozinha = new Cozinha();
-        cozinha.setId(1L);
+        Restaurante restaurante = restauranteRepository.porId(3L);
 
-        cozinhas.remover(cozinha);
-
+        System.out.println(restaurante.getNome());
     }
 }

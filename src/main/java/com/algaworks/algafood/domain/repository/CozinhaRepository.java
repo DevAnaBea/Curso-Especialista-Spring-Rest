@@ -4,7 +4,7 @@ import com.algaworks.algafood.domain.model.Cozinha;
 
 import java.util.List;
 
-public interface CozinhaRpository {
+public interface CozinhaRepository {
 
     List<Cozinha> todas();
     Cozinha porId(Long id);
