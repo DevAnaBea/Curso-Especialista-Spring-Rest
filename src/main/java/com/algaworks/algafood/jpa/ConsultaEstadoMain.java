@@ -18,7 +18,7 @@ public class ConsultaEstadoMain {
 
         EstadoRepository cidadeRepository = applicationContext.getBean(EstadoRepository.class);
 
-        List<Estado> todosEtados = cidadeRepository.todos();
+        List<Estado> todosEtados = cidadeRepository.listar();
 
         for (Estado estado : todosEtados) {
             System.out.printf("%s\n", estado.getNome());

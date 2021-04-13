@@ -18,7 +18,7 @@ public class ConsultaFormaFagamento {
 
         FormaPagamentoRepository formaPagamentoRepository = applicationContext.getBean(FormaPagamentoRepository.class);
 
-        List<FormaPagamento> todasFormasPagamentos = formaPagamentoRepository.todas();
+        List<FormaPagamento> todasFormasPagamentos = formaPagamentoRepository.listar();
 
         for (FormaPagamento formaPagamento : todasFormasPagamentos) {
             System.out.println(formaPagamento.getDescricao());

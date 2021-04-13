@@ -22,7 +22,7 @@ public class AlteracaoRestauranteMain {
         Restaurante restaurante = new Restaurante();
         restaurante.setId(ID);
         restaurante.setNome(NOME);
-        restaurante.setTaxaFrete(restauranteRepository.porId(ID).getTaxaFrete());
+        restaurante.setTaxaFrete(restauranteRepository.buscar(ID).getTaxaFrete());
 
         restauranteRepository.adicionar(restaurante);
     }

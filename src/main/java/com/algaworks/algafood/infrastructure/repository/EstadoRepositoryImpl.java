@@ -16,13 +16,13 @@ public class EstadoRepositoryImpl implements EstadoRepository {
     private EntityManager manager;
 
     @Override
-    public List<Estado> todos() {
+    public List<Estado> listar() {
         return manager.createQuery("from Estado", Estado.class)
                 .getResultList();
     }
 
     @Override
-    public Estado porId(Long id) {
+    public Estado busrcar(Long id) {
         return manager.find(Estado.class,id);
     }
 
@@ -35,7 +35,7 @@ public class EstadoRepositoryImpl implements EstadoRepository {
     @Transactional
     @Override
     public void remover(Estado estado) {
-        estado = porId(estado.getId());
+        estado = busrcar(estado.getId());
         manager.remove(estado);
 
     }
